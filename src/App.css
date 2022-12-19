@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Prompt:wght@600&family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar{
+  display: flex;
+  flex-flow: row nowrap;
+  height: 60px;
+  margin: 10px;
+  padding: 10px;
+  border-width: 1px;
+  border-color: black;
+  border-style: inset;
+}
+
+.titulo {
+  font-size: xx-large;
+  font-weight: bolder;
+  padding: 10px;
+  color: black;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.estilosElectronica {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 10px;
+  text-align: center;
+}
+
+.estilo {
+  padding: 50px;
+  font-size: larger;
+}
+
+.card{
+  padding: 20px;
+  width: 500px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+}
+
+.cardContainer{
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+}
+
+img {
+  size-adjust: 100px;
+}
+
+#icono{
+  padding-right: 10px;
+}
