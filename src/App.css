@@ -55,6 +55,8 @@
 .cardDetalle{
   display: flex;
   flex-flow: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -110,6 +112,20 @@
   font-size: 2.5em;
   font-weight: 300;
   margin: 0.5em;
+}
+
+h1{
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.botonera{
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bolder;
+  font-size: 2em;
 }
 
 /* Estilo carrito */
