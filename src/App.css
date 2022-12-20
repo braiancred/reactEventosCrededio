@@ -4,18 +4,6 @@
   margin: 0;
 }
 
-/* Estilo de navbar */
-
-.navbar{
-  display: flex;
-  flex-flow: row nowrap;
-  height: 60px;
-  margin: 10px;
-  padding: 10px;
-  border-width: 2px;
-  border-color: black;
-}
-
 /* Listado de eventos en pag ppal y filtro de estilos */
 
 .lista{
