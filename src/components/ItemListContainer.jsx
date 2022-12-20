@@ -3,6 +3,7 @@ import { customFetch } from "../utils/customFetch";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { data } from "../utils/data";
+import "../App.css";
 
 const ItemListContainer = () => {
     const[datos, setDatos] = useState([]);

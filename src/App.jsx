@@ -6,14 +6,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return(
-    <BrowserRouter>
-      <Navbar className="navbar"/>
-      <Routes>
-        <Route path="/" element={<ItemListContainer/>}/>
-        <Route path="/style/:estilo" element={<ItemListContainer/>}/>
-        <Route path="/id/:idItem" element={<ItemDetailContainer/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar className="navbar"/>
+        <div className="lista">
+          <Routes>
+            <Route path="/" element={<ItemListContainer/>}/>
+            <Route path="/style/:estilo" element={<ItemListContainer/>}/>
+            <Route path="/item/:idItem" element={<ItemDetailContainer/>}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
   );
 }
 
