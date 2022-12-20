@@ -7,15 +7,14 @@ const ItemDetail = ({ item }) => {
         {
             <div className="cardDetalle">
                 <div className="cardImagen">
-                    <img src={item.banner} alt="banner del evento"></img>
+                    <img className="imagenDetalle" src={item.banner} alt="banner del evento"></img>
                 </div>
                 <div className="cardTexto">
                     <div className="divTexto">
-                        <div><h1 className="cardTitulo">{item.name}</h1></div>
-                        <div><p>{item.style}</p></div>
-                        <div><p>{item.location}</p></div>
-                        <div><p>{item.date}</p></div>
-                        <div><p>{item.description}</p></div>
+                        <div><h2 className="contenedorTitulo">{item.name}</h2></div>
+                        <div><p className="pregunta">¿Qué estilo?</p><p className="respuesta">{item.style}</p></div>
+                        <div><p className="pregunta">¿Dónde?</p><p className="respuesta">{item.location}</p></div>
+                        <div><p className="pregunta">¿Cuándo?</p><p className="respuesta">{item.date}</p></div>
                     </div>
                 </div>
             </div>

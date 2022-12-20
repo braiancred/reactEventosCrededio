@@ -4,8 +4,7 @@ export const data = [
       name: "Eric Pridz",
       style: "Techno",
       location: "Buenos Aires",
-      date: "diciembre 2022",
-      description: "fdshdfhdfhfdh",
+      date: "Diciembre 2022",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Eric_Pridz_gsgwcn.jpg",
     },
     {
@@ -13,8 +12,7 @@ export const data = [
       name: "Artbat",
       style: "Melodic-Techno",
       location: "Mar Del Plata",
-      date: "enero 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Enero 2023",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Artbat_ktr7zt.jpg",
     },
     {
@@ -22,8 +20,7 @@ export const data = [
       name: "Hernán Cattáneo",
       style: "Progressive",
       location: "Buenos Aires",
-      date: "marzo 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Marzo 2023",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811942/Hern%C3%A1n_Catt%C3%A1neo_ngyl6d.jpg",
     },
     {
@@ -31,8 +28,7 @@ export const data = [
       name: "Monolink - Elke Kleijn",
       style: "Melodic-Techno",
       location: "Punta Del Este",
-      date: "enero 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Enero 2023",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Monolink_xoc6v8.jpg",
     },
     {
@@ -40,8 +36,7 @@ export const data = [
       name: "Dennis Cruz",
       style: "Tech-House",
       location: "Buenos Aires",
-      date: "diciembre 2022",
-      description: "fdshdfhdfhfdh",
+      date: "Diciembre 2022",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Dennis_Cruz_xri5mh.jpg",
     },
     {
@@ -49,8 +44,7 @@ export const data = [
       name: "Paco Osuna",
       style: "Tech-House",
       location: "Cordoba",
-      date: "diciembre 2022",
-      description: "fdshdfhdfhfdh",
+      date: "Diciembre 2022",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811942/Paco_Osuna_fsqxur.jpg",
     },
     {
@@ -58,8 +52,7 @@ export const data = [
       name: "Marco Carola - Hot Since 82",
       style: "Tech-House",
       location: "Punta Del Este",
-      date: "enero 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Enero 2023",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Marco_Carola_-_HS_82_dxtywr.jpg",
     },
     {
@@ -67,8 +60,7 @@ export const data = [
       name: "Nick Warren",
       style: "Progressive",
       location: "Villa Gesell",
-      date: "enero 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Enero 2023",
       banner: "https://imgproxy.ra.co/_/quality:66/w:1500/rt:fill/aHR0cHM6Ly9pbWFnZXMucmEuY28vZTg2MTMyNDk3ZDE0MGE0YTM3ZmNlZTJmYWI1ZjA0M2QyMDk0MDAxYy5qcGc=",
     },
     {
@@ -76,8 +68,7 @@ export const data = [
       name: "Fideles",
       style: "Techno",
       location: "Cordoba",
-      date: "enero 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Enero 2023",
       banner: "https://dvuq2nras8x3d.cloudfront.net/events/e3bae09f-01a1-4f24-b79c-a7d3fdebb744.jpeg",
     },
     {
@@ -85,8 +76,7 @@ export const data = [
       name: "John Digweed",
       style: "Progressive",
       location: "Villa Gesell",
-      date: "enero 2023",
-      description: "fdshdfhdfhfdh",
+      date: "Enero 2023",
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670816406/John_Digweeg_ahwrzl.jpg",
     },
   ];
