@@ -1,12 +1,14 @@
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import Cart from "./components/Cart";
+import CartContextProvider from "./components/CartContext";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cart from "./components/Cart";
 
 const App = () => {
   return(
+    <CartContextProvider>
       <BrowserRouter>
         <Navbar className="navbar"/>
         <div className="lista">
@@ -18,6 +20,7 @@ const App = () => {
           </Routes>
         </div>
       </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

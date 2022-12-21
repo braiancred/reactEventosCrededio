@@ -128,8 +128,17 @@ h1{
   font-size: 2em;
 }
 
-/* Estilo carrito */
+/* Estilo carrito en inicio */
 
 #icono{
   padding-right: 10px;
+}
+
+/* Estilo lista carrito */
+
+.listaCarrito{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
