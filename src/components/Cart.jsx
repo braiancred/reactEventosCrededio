@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import "../App.css";
@@ -13,8 +14,10 @@ const Cart = () => {
                 <ul>
                     {
                         cartList.length === 0
-                        ? <p>No tienes entradas en el carrito</p>
-                        : cartList.map(item => <li key={item.id}>{item.name} cantidad:{item.qty} <img src={item.banner} alt ="banner del evento"/> <button onClick={() => deleteThis(item.id)} type="button" class="btn btn-secondary">Eliminar</button></li>)
+                        ? <div>
+                            <p>No tienes entradas en el carrito</p><button><Link to='/' type="button" class="btn btn-secondary">Ir a comprar</Link></button>
+                            </div>
+                        : cartList.map(item => <li key={item.id}>{item.name} cantidad:{item.qty}<button onClick={() => deleteThis(item.id)} type="button" class="btn btn-secondary">Eliminar</button></li>)
                     }
                 </ul>
             </div>
@@ -22,6 +25,13 @@ const Cart = () => {
                 {
                     (cartList.length > 1)
                     ? <button onClick={removeList} type="button" class="btn btn-secondary">Eliminar todo</button> 
+                    : <p></p>
+                }
+            </div>
+            <div>
+                {
+                    (cartList.length > 0)
+                    ? <button><Link to='/' type="button" class="btn btn-secondary">Seguir Comprando</Link></button>
                     : <p></p>
                 }
             </div>

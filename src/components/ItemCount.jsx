@@ -15,10 +15,11 @@ const ItemCount = ({ stock = 10, initial = 1,  onAdd }) => {
     }
     
     const decrement = () => {
-        if (count > initial ) {
+        if (count > initial) {
             setCount(count - 1);
         }
     }
+
     return (
         <>
             <div className="botonera">

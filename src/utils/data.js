@@ -6,7 +6,6 @@ export const data = [
       location: "Buenos Aires",
       date: "11 de Febrero de 2023",
       price: 14000,
-      chargePrice: 1200,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Eric_Pridz_gsgwcn.jpg",
     },
     {
@@ -16,7 +15,6 @@ export const data = [
       location: "Mar Del Plata",
       date: "07 de Enero de 2023",
       price: 12000,
-      chargePrice: 1000,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Artbat_ktr7zt.jpg",
     },
     {
@@ -26,7 +24,6 @@ export const data = [
       location: "Buenos Aires",
       date: "04 de Marzo de 2023",
       price: 15000,
-      chargePrice: 1500,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811942/Hern%C3%A1n_Catt%C3%A1neo_ngyl6d.jpg",
     },
     {
@@ -36,7 +33,6 @@ export const data = [
       location: "Punta Del Este",
       date: "03 de Enero de 2023",
       price: 12000,
-      chargePrice: 1500,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Monolink_xoc6v8.jpg",
     },
     {
@@ -46,7 +42,6 @@ export const data = [
       location: "Buenos Aires",
       date: "17 de Diciembre de 2022",
       price: 8000,
-      chargePrice: 800,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Dennis_Cruz_xri5mh.jpg",
     },
     {
@@ -56,7 +51,6 @@ export const data = [
       location: "Cordoba",
       date: "16 de Diciembre de 2022",
       price: 9000,
-      chargePrice: 1500,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811942/Paco_Osuna_fsqxur.jpg",
     },
     {
@@ -66,7 +60,6 @@ export const data = [
       location: "Punta Del Este",
       date: "03 de Enero de 2023",
       price: 11000,
-      chargePrice: 1200,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811941/Marco_Carola_-_HS_82_dxtywr.jpg",
     },
     {
@@ -76,7 +69,6 @@ export const data = [
       location: "Villa Gesell",
       date: "26 de Enero de 2023",
       price: 10000,
-      chargePrice: 1000,
       banner: "https://imgproxy.ra.co/_/quality:66/w:1500/rt:fill/aHR0cHM6Ly9pbWFnZXMucmEuY28vZTg2MTMyNDk3ZDE0MGE0YTM3ZmNlZTJmYWI1ZjA0M2QyMDk0MDAxYy5qcGc=",
     },
     {
@@ -86,7 +78,6 @@ export const data = [
       location: "Cordoba",
       date: "13 de Enero de 2023",
       price: 9000,
-      chargePrice: 1200,
       banner: "https://dvuq2nras8x3d.cloudfront.net/events/e3bae09f-01a1-4f24-b79c-a7d3fdebb744.jpeg",
     },
     {
@@ -96,7 +87,6 @@ export const data = [
       location: "Villa Gesell",
       date: "19 de Enero de 2023",
       price: 9000,
-      chargePrice: 1100,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670816406/John_Digweeg_ahwrzl.jpg",
     },
   ];
