@@ -66,6 +66,7 @@
   text-align: center;
   transition: all 0.25s;
   background-color: rgba(245, 245, 245);
+  padding-bottom: 1em;
 }
 
 .cardImagen{

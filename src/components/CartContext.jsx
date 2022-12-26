@@ -7,21 +7,26 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (item, qty) => {
-        let found = cartList.find(data => data.idItem === item.id);
-        if (found === undefined ) {
-            setCartList([
-                ...cartList,
-                {
-                    id: item.id,
-                    name: item.name,
-                    banner: item.banner,
-                    price: item.price,
-                    qty: qty 
+        let found = cartList.find(data => data.id === item.id);
+        if (found ) {
+            const updatedCart = cartList.map((prod) => {
+                if (prod.id === item.id) {
+                    return { ...prod, qty: prod.qty + qty }
                 }
-        ]);
+                return prod;
+            })
+            setCartList(updatedCart)
     } else {
-        found.qtyItem += qty; 
-        setCartList([...cartList])
+       
+        setCartList([...cartList, 
+            {
+            id: item.id,
+            name: item.name,
+            banner: item.banner,
+            price: item.price,
+            qty: qty 
+        }
+    ])
         }
     }
 
