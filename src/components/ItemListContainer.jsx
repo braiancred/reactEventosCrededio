@@ -1,25 +1,39 @@
 import ItemList from "./ItemList";
-import { customFetch } from "../utils/customFetch";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import { data } from "../utils/data";
 import "../App.css";
+import { db } from "../utils/firebaseConfig";
+import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
 
 const ItemListContainer = () => {
     const[datos, setDatos] = useState([]);
     const { estilo } = useParams();
 
     useEffect(() => {
-        if (estilo) {
-        customFetch(2000, data.filter(item => item.style === estilo))
-            .then(result => setDatos(result))
-            .catch(err => console.log(err))     
-        } else {
-        customFetch(2000, data)
-            .then(result => setDatos(result))
-            .catch(err => console.log(err))  
+        const fetchFromFirestore = async() => {
+            let q;
+            if (estilo) {
+                q = query(collection(db, "eventos"), where("style", "==", estilo));
+            } else {
+                q = query(collection(db, "eventos"), orderBy("date"));
+            }
+            const querySnapshot = await getDocs(q);
+            const dataFromFirestore = querySnapshot.docs.map(item => ({
+                id: item.id,
+                ...item.data()
+            }))
+            return dataFromFirestore;
         }
+        fetchFromFirestore()
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
     }, [estilo]);
+    
+    useEffect(() => {
+        return (() => {
+            setDatos([]);
+        })
+    }, []);
 
     return (
         <>

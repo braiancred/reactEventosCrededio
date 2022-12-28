@@ -7,26 +7,24 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (item, qty) => {
-        let found = cartList.find(data => data.id === item.id);
-        if (found ) {
-            const updatedCart = cartList.map((prod) => {
-                if (prod.id === item.id) {
-                    return { ...prod, qty: prod.qty + qty }
+        let found = cartList.find(data => data.id === item.idItem);
+        if (found === undefined) {
+            setCartList([
+                ...cartList,
+                {
+                    idItem: item.idItem,
+                    bannerItem: item.banner,
+                    nameItem: item.name,
+                    priceItem: item.price,
+                    qtyItem: qty
                 }
-                return prod;
-            })
-            setCartList(updatedCart)
-    } else {
-       
-        setCartList([...cartList, 
-            {
-            id: item.id,
-            name: item.name,
-            banner: item.banner,
-            price: item.price,
-            qty: qty 
-        }
-    ])
+            ]);
+        } else {
+            //al encontrarlo, entonces aumentamos el qty de ese producto
+            found.qtyItem += qty;
+            setCartList([
+                ...cartList
+            ]);
         }
     }
 
@@ -34,9 +32,9 @@ const CartContextProvider = ({children}) => {
         setCartList([]);
     }
 
-    const deleteThis = (id) => {
-        const nuevoArray = cartList.filter(item => item.id !== id);
-        setCartList(nuevoArray);
+    const deleteItem = (id) => {
+        let result = cartList.filter(item => item.idItem !== id);
+        setCartList(result);
     }
 
     const calcTotalPerItem = (idItem) => {
@@ -50,7 +48,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const calcChargePrice = () => {
-        return calcSubTotal() * 1.10;
+        return calcSubTotal() * 0.10;
     }
 
     const calcTotal = () => {
@@ -63,7 +61,7 @@ const CartContextProvider = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, deleteThis, removeList, calcTotalPerItem, calcSubTotal, calcChargePrice, calcTotal, calcItemsQty}}>
+        <CartContext.Provider value={{cartList, addToCart, deleteItem, removeList, calcTotalPerItem, calcSubTotal, calcChargePrice, calcTotal, calcItemsQty}}>
             {children}
         </CartContext.Provider>
     );

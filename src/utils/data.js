@@ -48,7 +48,7 @@ export const data = [
       id: 6,
       name: "Paco Osuna",
       style: "Tech-House",
-      location: "Cordoba",
+      location: "Córdoba",
       date: "16 de Diciembre de 2022",
       price: 9000,
       banner: "https://res.cloudinary.com/dmxt0frnf/image/upload/v1670811942/Paco_Osuna_fsqxur.jpg",
