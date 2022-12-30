@@ -59,6 +59,7 @@ const Cart = () => {
                                         <hr />
                                         <button onClick={() => deleteItem(item.idItem)} type="button" class="btn btn-secondary">Eliminar</button>
                                     </div>
+                                <hr />
                                 </li>)
                             }
                         </ul>
@@ -79,7 +80,9 @@ const Cart = () => {
                     <div>Cargo por Servicio: $ {calcChargePrice()}</div>
                     <hr />
                     <div>Total: ${calcTotal()}</div>
+                    <hr />
                     <button onClick={createOrder} type="button" class="btn btn-secondary">Comprar ahora!</button>
+                    <hr />
                 <div>
                     {
                         (cartList.length > 0)
