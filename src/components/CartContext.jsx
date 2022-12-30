@@ -20,11 +20,10 @@ const CartContextProvider = ({children}) => {
                 }
             ]);
         } else {
-            //al encontrarlo, entonces aumentamos el qty de ese producto
             found.qtyItem += qty;
             setCartList([
                 ...cartList
-            ]);
+            ])
         }
     }
 
@@ -33,13 +32,13 @@ const CartContextProvider = ({children}) => {
     }
 
     const deleteItem = (id) => {
-        let result = cartList.filter(item => item.idItem !== id);
-        setCartList(result);
+        let eliminarTicket = cartList.filter(item => item.idItem !== id);
+        setCartList(eliminarTicket);
     }
 
     const calcTotalPerItem = (idItem) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem);
-        return cartList[index].costItem + cartList[index].qtyItem;
+        return cartList[index].priceItem * cartList[index].qtyItem;
     }
         
     const calcSubTotal = () => {
@@ -52,7 +51,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const calcTotal = () => {
-        return calcSubTotal();
+        return calcSubTotal() + calcChargePrice();
     }
 
     const calcItemsQty = () => {

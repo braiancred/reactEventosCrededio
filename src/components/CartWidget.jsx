@@ -3,11 +3,11 @@ import { useContext } from "react";
 import { CartContext } from './CartContext';
 
 const CartWidget = () => {
-    const test = useContext(CartContext);
+    const { caclItemsQty } = useContext(CartContext);
 
     return (
         <div id="icono">
-             <button>{test.caclItemsQty()}<AiOutlineShoppingCart /></button></div>
+             <button>{caclItemsQty()}<AiOutlineShoppingCart /></button></div>
     );
 }
 
