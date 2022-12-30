@@ -7,7 +7,8 @@ const CartWidget = () => {
 
     return (
         <div id="icono">
-             <button>{caclItemsQty()}<AiOutlineShoppingCart /></button></div>
+             <button>{caclItemsQty()}<AiOutlineShoppingCart /></button>
+        </div>
     );
 }
 

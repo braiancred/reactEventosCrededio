@@ -6,9 +6,7 @@ import { doc, setDoc, collection, increment, updateDoc, serverTimestamp } from "
 import { db } from "../utils/firebaseConfig";
 
 const Cart = () => {
-
     const { calcTotal, cartList, removeList, deleteItem, calcTotalPerItem, calcSubTotal, calcChargePrice } = useContext(CartContext);
-    
     const createOrder = () => {
         const order = {
             buyer: {
@@ -31,7 +29,6 @@ const Cart = () => {
             await setDoc(newOrderRef, order);
             return newOrderRef;
         }
-
         createOrderInFirestore()
             .then(result => {
                 alert("Felicitaciones, has realizado la compra! El código de tu compra es " + result.id)
@@ -45,7 +42,6 @@ const Cart = () => {
             })
             .catch(err => console.log(err))
     }
-
     return (
         <>
             <div className="contenedorIzqDer">
@@ -70,12 +66,12 @@ const Cart = () => {
                     <div>
                     {
                         (cartList.length > 1)
-                        ? <button onClick={removeList} type="button" class="btn btn-secondary">Eliminar todo</button> 
-                        : <p></p>
+                        && <button onClick={removeList} type="button" class="btn btn-secondary">Eliminar todo</button> 
+                        
                     }
                     </div>
                 </div>
-                <div className="parteDerCarrito">
+                { cartList.length && <div className="parteDerCarrito">
                     <h1>Tu compra:</h1>
                     <hr />
                     <div>Sub-total de compra: ${calcSubTotal()}</div>
@@ -87,11 +83,10 @@ const Cart = () => {
                 <div>
                     {
                         (cartList.length > 0)
-                        ? <button><Link to='/' type="button" class="btn btn-secondary">Seguir Comprando</Link></button>
-                        : <p></p>
+                        && <button><Link to='/' type="button" class="btn btn-secondary">Seguir Comprando</Link></button> 
                     }
                 </div>
-                </div>
+                </div>}
             </div>
         </>
     );
