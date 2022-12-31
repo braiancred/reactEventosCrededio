@@ -8,10 +8,10 @@ const Navbar = () => {
            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse" id="navbarNav">
+                        <div className="nav-item">
+                            <Link className="nav-link" to="/"><div className="respuesta">ELECTRONIC ARG</div></Link>
+                        </div>
                         <ul class="navbar-nav mx-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">ELECTRONIC ARG</Link>
-                            </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/style/Techno">Techno</Link>
                             </li>
@@ -24,8 +24,10 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="style/Progressive">Progressive</Link>
                             </li>
-                            <div id="icono"><button><AiOutlineShoppingCart /></button></div>
                         </ul>
+                        <div>
+                            <Link to="/cart" className="nav-link"><AiOutlineShoppingCart /></Link>
+                        </div>
                     </div>
                 </div>
             </nav> 

@@ -1,14 +1,13 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useContext } from "react";
 import { CartContext } from './CartContext';
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-    const { caclItemsQty } = useContext(CartContext);
+    const { calcItemsQty } = useContext(CartContext);
 
     return (
-        <div id="icono">
-             <button>{caclItemsQty()}<AiOutlineShoppingCart /></button>
-        </div>
+        <AiOutlineShoppingCart><Link to="/cart" className="nav-link">{calcItemsQty()}</Link></AiOutlineShoppingCart>
     );
 }
 

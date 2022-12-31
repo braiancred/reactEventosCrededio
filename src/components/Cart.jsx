@@ -7,6 +7,7 @@ import { db } from "../utils/firebaseConfig";
 
 const Cart = () => {
     const { calcTotal, cartList, removeList, deleteItem, calcTotalPerItem, calcSubTotal, calcChargePrice } = useContext(CartContext);
+    
     const createOrder = () => {
         const order = {
             buyer: {
@@ -14,21 +15,22 @@ const Cart = () => {
                 email: "braiancred@gmail.com",
                 phone: "534537457"
             },
-            date: serverTimestamp(),
             items: cartList.map(item => ({
                 id: item.idItem,
                 title: item.name,
                 price: item.price,
                 qty: item.qty
             })),
+            date: serverTimestamp(),
             total: calcTotal()
-        }
+        };
 
         const createOrderInFirestore = async () => {
             const newOrderRef = doc(collection(db, "orders"));
             await setDoc(newOrderRef, order);
             return newOrderRef;
         }
+
         createOrderInFirestore()
             .then(result => {
                 alert("Felicitaciones, has realizado la compra! El código de tu compra es " + result.id)
@@ -40,8 +42,9 @@ const Cart = () => {
                 })
                 removeList()
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     }
+
     return (
         <>
             <div className="contenedorIzqDer">
@@ -72,7 +75,8 @@ const Cart = () => {
                     }
                     </div>
                 </div>
-                { cartList.length && <div className="parteDerCarrito">
+                { cartList.length > 0 &&
+                <div className="parteDerCarrito">
                     <h1>Tu compra:</h1>
                     <hr />
                     <div>Sub-total de compra: ${calcSubTotal()}</div>
