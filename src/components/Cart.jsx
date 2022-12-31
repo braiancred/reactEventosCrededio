@@ -15,13 +15,13 @@ const Cart = () => {
                 email: "braiancred@gmail.com",
                 phone: "534537457"
             },
+            date: serverTimestamp(),
             items: cartList.map(item => ({
                 id: item.idItem,
-                title: item.name,
+                name: item.name,
                 price: item.price,
                 qty: item.qty
             })),
-            date: serverTimestamp(),
             total: calcTotal()
         };
 
@@ -35,7 +35,7 @@ const Cart = () => {
             .then(result => {
                 alert("Felicitaciones, has realizado la compra! El código de tu compra es " + result.id)
                 cartList.forEach( async(item) => {
-                    const itemRef = doc(db, "eventos", item.idItem)
+                    const itemRef = doc(db, "eventos", item.idItem);
                     await updateDoc(itemRef, {
                         stock: increment(-item.qtyItem)
                     });
