@@ -130,20 +130,51 @@ h1{
 
 /* Estilo lista carrito */
 
+h1{
+  margin: 0.25em;
+}
+
 .contenedorIzqDer{
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   margin: 0.5em;
+  padding: 1em;
   text-align: center;
   transition: all 0.25s;
   background-color: rgba(245, 245, 245);
-  padding-bottom: 0.5em;
+  padding: 0.5em;
 }
 
+.parteIzqCarrito{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.detalleCard{
+  display: flex;
+  flex-direction: row;
+}
+
+.cardSeparador{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  padding: 20px;
+}
+
+.parteDerCarrito{
+  padding: 20px;
+}

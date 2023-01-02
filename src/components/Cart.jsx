@@ -39,47 +39,57 @@ const Cart = () => {
 
 
     return (
-        <>
+        <div>
             <div className="contenedorIzqDer">
                 <div className="parteIzqCarrito">
-                    <h1>Tus entradas:</h1>
-                    <div className="cardTicket">
-                        <ul>
-                            {
-                                cartList.length === 0
-                                ? <><p>No tienes entradas en el carrito</p><button><Link to='/' type="button" class="btn btn-secondary">Ir a comprar</Link></button></>
-                                : cartList.map(item => <li key={item.idItem}>
-                                    <div className="imgCard"><img width="25%" src={item.bannerItem} alt="banner del evento"/></div>
-                                    <div className="textCard">
-                                        Evento: {item.nameItem} Cantidad de tickets: {item.qtyItem} Valor por ticket: ${item.priceItem} Sub-total por cantidad de ticket: ${calcTotalPerItem(item.idItem)} 
-                                        <hr />
-                                        <button onClick={() => deleteItem(item.idItem)} type="button" class="btn btn-secondary">Eliminar</button>
-                                    </div>
-                                <hr />
-                                </li>)
-                            }
-                        </ul>
-                    </div>
-                    <div>
-                    {
-                        (cartList.length > 1)
-                        && <button onClick={removeList} type="button" class="btn btn-secondary">Eliminar todo</button> 
-                        
-                    }
-                    </div>
+                        <div className="detalleCard">
+                            <ul>
+                                {
+                                    cartList.length === 0
+                                    ? <>
+                                    <p>No tienes entradas en el carrito</p><button><Link to='/' type="button" class="btn btn-secondary">Ir a comprar</Link></button>
+                                    </>
+                                    : cartList.map(item => <li key={item.idItem}>
+                                        <h1>Tus entradas:</h1>
+                                        <div className="cardSeparador">
+                                            <img width="30%" src={item.bannerItem} alt="banner del evento"/>
+                                            <div>
+                                                Evento:<p className="respuesta">{item.nameItem}</p>
+                                                <hr /> 
+                                                Cantidad de tickets:<p className="respuesta">{item.qtyItem}</p>
+                                                <hr />
+                                                Valor por ticket:<div><p className="respuesta">${item.priceItem}</p></div>
+                                                <hr />
+                                                Sub-total por cantidad de ticket:<div><p className="respuesta">${calcTotalPerItem(item.idItem)}</p></div>
+                                                <hr />
+                                                <button onClick={() => deleteItem(item.idItem)} type="button" class="btn btn-secondary">Eliminar</button>
+                                            </div>
+                                        </div>
+                                    <hr />
+                                    </li>)
+                                }
+                            </ul>
+                        </div>
                 </div>
                 { cartList.length > 0 &&
                 <div className="parteDerCarrito">
                     <h1>Tu compra:</h1>
                     <hr />
-                    <div>Sub-total de compra: ${calcSubTotal()}</div>
+                    <div>Sub-total de compra:<p className="respuesta">${calcSubTotal()}</p></div>
                     <hr />
-                    <div>Cargo por Servicio: $ {calcChargePrice()}</div>
+                    <div>Cargo por Servicio:<p className="respuesta">${calcChargePrice()}</p></div>
                     <hr />
-                    <div>Total: ${calcTotal()}</div>
+                    <div>Total:<p className="respuesta">${calcTotal()}</p></div>
                     <hr />
                     <button onClick={createOrder} type="button" class="btn btn-secondary">Comprar ahora!</button>
                     <hr />
+                <div>
+                {
+                    (cartList.length > 1)
+                    && <button onClick={removeList} type="button" class="btn btn-secondary">Eliminar todo</button>                       
+                }
+                <hr />
+                </div>
                 <div>
                     {
                         (cartList.length > 0)
@@ -88,7 +98,7 @@ const Cart = () => {
                 </div>
                 </div>}
             </div>
-        </>
+        </div>
     );
 }
 
