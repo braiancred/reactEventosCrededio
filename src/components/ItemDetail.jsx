@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import "../App.css";
 import { CartContext } from "./CartContext";
+import swal from "sweetalert";
 
 const ItemDetail = ({ item }) => {
     const [itemCount, setItemCount] = useState(0);
     const { addToCart } = useContext(CartContext);
 
     const onAdd = (qty) => {
-        alert("Has añadido " + qty + " entradas al carrito.");
+        swal({
+            title: "Felicitaciones!", 
+            text: "Has añadido " + qty + " entradas al carrito.",
+            icon: "success",
+            button: "Aceptar"});
         setItemCount(qty);
         addToCart(item, qty);
     }

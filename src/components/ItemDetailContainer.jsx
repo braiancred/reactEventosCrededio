@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../utils/firebaseConfig";
+import swal from "sweetalert";
 
 const ItemDetailContainer = () => {
     const[dato, setDato] = useState({});
@@ -19,7 +20,10 @@ const ItemDetailContainer = () => {
                     ...docSnap.data()
                 }
             } else {
-                alert("No se encontró el evento :(");
+                swal({
+                    title: "No se encontró el evento",
+                    icon: "error",
+                    button: "Aceptar"});
             };
         }
         fetchOneFromFirestore()
