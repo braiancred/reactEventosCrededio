@@ -6,7 +6,10 @@ const CartWidget = () => {
     const { calcItemsQty } = useContext(CartContext);
 
     return (
-        <AiOutlineShoppingCart>{calcItemsQty()}</AiOutlineShoppingCart>
+        <>
+        <AiOutlineShoppingCart/>
+       <span>{calcItemsQty() || ""}</span> 
+        </>
     );
 }
 

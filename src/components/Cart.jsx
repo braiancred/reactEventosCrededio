@@ -2,36 +2,27 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import "../App.css";
-import { doc, setDoc, collection, increment, updateDoc, serverTimestamp } from "firebase/firestore";
+import { doc, collection, increment, updateDoc, serverTimestamp, addDoc } from "firebase/firestore";
 import { db } from "../utils/firebaseConfig";
 
 const Cart = () => {
     const { calcTotal, cartList, removeList, deleteItem, calcTotalPerItem, calcSubTotal, calcChargePrice } = useContext(CartContext);
     
+    
+   
     const createOrder = () => {
-        const order = {
+        let order = {
             buyer: {
                 name: "Braian Crededio",
                 email: "braiancred@gmail.com",
                 phone: "534537457"
             },
             date: serverTimestamp(),
-            items: cartList.map(item => ({
-                id: item.idItem,
-                name: item.name,
-                price: item.price,
-                qty: item.qty
-            })),
+            items: cartList,
             total: calcTotal()
         };
-
-        const createOrderInFirestore = async () => {
-            const newOrderRef = doc(collection(db, "orders"));
-            await setDoc(newOrderRef, order);
-            return newOrderRef;
-        }
-
-        createOrderInFirestore()
+        const newOrderRef = collection(db, "orders")
+          addDoc(newOrderRef, order)
             .then(result => {
                 alert("Felicitaciones, has realizado la compra! El código de tu compra es " + result.id)
                 cartList.forEach( async(item) => {
@@ -42,8 +33,10 @@ const Cart = () => {
                 })
                 removeList()
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err))
     }
+
+
 
     return (
         <>
